@@ -60,12 +60,12 @@ const Index = () => {
                   🐾 Personalised Dog Care in Yarrawonga
                 </Badge>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-                  Your Dog's
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                  <span className="text-foreground">Your Dog's</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400">
                     {" "}Home Away{" "}
                   </span>
-                  from Home
+                  <span className="text-foreground">from Home</span>
                 </h1>
                 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
@@ -98,7 +98,7 @@ const Index = () => {
             <div className="relative">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 p-8 backdrop-blur-sm border border-amber-200/50 dark:border-amber-800/50">
                 <img 
-                  src="https://images.unsplash.com/photo-1535468850893-d6e543fbd7f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="/lovable-uploads/791503c7-e420-4b36-9ea3-b1c64a828745.png" 
                   alt="Happy Shiba Inu in cosy apartment setting" 
                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
                 />
@@ -130,8 +130,8 @@ const Index = () => {
       <section id="about" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">About YarraPaws</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Our Dog Minding?</h2>
+            <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">About YarraPaws</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Why Choose Our Dog Minding?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We're not a kennel. We're a loving home where your dog receives personal attention in a comfortable, stress-free environment.
             </p>
@@ -169,8 +169,8 @@ const Index = () => {
       <section id="services" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Our Services</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tailored Care for Every Need</h2>
+            <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Our Services</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Tailored Care for Every Need</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -205,25 +205,25 @@ const Index = () => {
       <section id="gallery" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Gallery</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Happy Dogs, Happy Owners</h2>
+            <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Gallery</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Happy Dogs, Happy Owners</h2>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1535468850893-d6e543fbd7f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1516371535707-512a1e83bb9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-              "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              "/lovable-uploads/791503c7-e420-4b36-9ea3-b1c64a828745.png",
+              "/lovable-uploads/5901ee9c-4e85-4e85-9c26-27d7182b80ae.png",
+              "/lovable-uploads/2a1e7bcb-cda7-4744-a7d2-8f0462655e55.png",
+              "/lovable-uploads/1434fe8d-9879-4d13-82c9-1e30fa6efb82.png",
+              "/lovable-uploads/85afbe75-4b79-4b50-a8fa-84a0913dea9c.png",
+              "/lovable-uploads/f94383a7-49ae-4c49-9a01-9af8371d0589.png",
+              "/lovable-uploads/4ec8d538-80c7-4d13-ae10-e3228fb22b09.png",
+              "/lovable-uploads/2eb02de7-d37e-4fd4-a032-c404e42931f8.png"
             ].map((src, index) => (
-              <div key={index} className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+              <div key={index} className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer shadow-lg hover:shadow-xl">
                 <img 
                   src={src} 
-                  alt={`Happy dog ${index + 1}`}
+                  alt={`Happy Shiba Inu in cosy home environment ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -267,8 +267,8 @@ const Index = () => {
       <section id="contact" className="py-16 px-4 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Get In Touch</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Dog's Stay?</h2>
+            <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Get In Touch</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Ready to Book Your Dog's Stay?</h2>
             <p className="text-lg text-muted-foreground">
               Contact us for availability and to discuss your dog's specific needs
             </p>
