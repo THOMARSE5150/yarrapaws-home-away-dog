@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Home, Clock, Shield, Star, Mail, Phone, Dog, CheckCircle, Moon, Sun } from "lucide-react";
 
