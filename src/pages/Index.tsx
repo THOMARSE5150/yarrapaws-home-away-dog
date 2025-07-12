@@ -8,6 +8,11 @@ import { Heart, Home, Clock, Shield, Star, Mail, Phone, Dog, CheckCircle, Moon, 
 const Index = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
+  React.useEffect(() => {
+    // Set dark mode by default
+    document.documentElement.classList.add('dark');
+  }, []);
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark');
@@ -49,36 +54,39 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/20 via-orange-50/10 to-amber-100/20 dark:from-amber-900/10 dark:via-orange-900/5 dark:to-amber-800/10"></div>
+      <section className="pt-20 pb-12 px-4 relative overflow-hidden min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-600/10 via-orange-600/5 to-amber-800/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/20 via-background to-background"></div>
         
         <div className="container mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200">
+            <div className="space-y-8 z-10 relative">
+              <div className="space-y-6">
+                <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 backdrop-blur-sm">
                   🐾 Personalised Dog Care in Yarrawonga
                 </Badge>
                 
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  <span className="text-foreground">Your Dog's</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400">
-                    {" "}Home Away{" "}
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="text-foreground drop-shadow-lg">Your Dog's</span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300 drop-shadow-lg">
+                    Home Away
                   </span>
-                  <span className="text-foreground">from Home</span>
+                  <br />
+                  <span className="text-foreground drop-shadow-lg">from Home</span>
                 </h1>
                 
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl font-medium">
                   Cosy 1-bedroom apartment with private grassed courtyard. Genuine love and attention for small to medium dogs — never kennels or cages.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button size="lg" className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 border-0">
                   <Heart className="w-5 h-5 mr-2" />
                   Book Dog Care
                 </Button>
-                <Button variant="outline" size="lg" className="border-amber-200 hover:bg-amber-50 dark:border-amber-800 dark:hover:bg-amber-900/20">
+                <Button variant="outline" size="lg" className="border-primary/30 bg-background/20 backdrop-blur-sm hover:bg-primary/10 text-foreground">
                   Learn More
                 </Button>
               </div>
@@ -96,7 +104,7 @@ const Index = () => {
             </div>
             
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 p-8 backdrop-blur-sm border border-amber-200/50 dark:border-amber-800/50">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/10 to-orange-500/10 p-8 backdrop-blur-xl border border-primary/20 shadow-2xl">
                 <img 
                   src="/lovable-uploads/791503c7-e420-4b36-9ea3-b1c64a828745.png" 
                   alt="Happy Shiba Inu in cosy apartment setting" 
@@ -105,20 +113,20 @@ const Index = () => {
               </div>
               
               {/* Floating cards */}
-              <Card className="absolute -bottom-4 -left-4 p-4 bg-background/80 backdrop-blur-md border-amber-200/50 dark:border-amber-800/50 shadow-xl">
+              <Card className="absolute -bottom-4 -left-4 p-4 bg-background/80 backdrop-blur-xl border-primary/20 shadow-xl">
                 <div className="flex items-center space-x-3">
-                  <Home className="w-8 h-8 text-amber-600" />
+                  <Home className="w-8 h-8 text-primary" />
                   <div>
-                    <p className="font-semibold text-sm">Cosy Apartment</p>
+                    <p className="font-semibold text-sm text-foreground">Cosy Apartment</p>
                     <p className="text-xs text-muted-foreground">Private courtyard</p>
                   </div>
                 </div>
               </Card>
               
-              <Card className="absolute -top-4 -right-4 p-3 bg-background/80 backdrop-blur-md border-amber-200/50 dark:border-amber-800/50 shadow-xl">
+              <Card className="absolute -top-4 -right-4 p-3 bg-background/80 backdrop-blur-xl border-primary/20 shadow-xl">
                 <div className="flex items-center space-x-2">
-                  <Shield className="w-6 h-6 text-green-600" />
-                  <span className="text-sm font-medium">Fully Insured</span>
+                  <Shield className="w-6 h-6 text-green-500" />
+                  <span className="text-sm font-medium text-foreground">Fully Insured</span>
                 </div>
               </Card>
             </div>
@@ -138,25 +146,25 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow bg-background/50 backdrop-blur-sm border-amber-200/50 dark:border-amber-800/50">
-              <Home className="w-12 h-12 text-amber-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Cosy Home Environment</h3>
+            <Card className="p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-xl border-primary/20">
+              <Home className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Cosy Home Environment</h3>
               <p className="text-muted-foreground">
                 Your dog stays in a comfortable 1-bedroom ground floor apartment with a private grassed courtyard — never kennels or cages.
               </p>
             </Card>
             
-            <Card className="p-6 hover:shadow-lg transition-shadow bg-background/50 backdrop-blur-sm border-amber-200/50 dark:border-amber-800/50">
+            <Card className="p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-xl border-primary/20">
               <Heart className="w-12 h-12 text-red-500 mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Personal Attention</h3>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Personal Attention</h3>
               <p className="text-muted-foreground">
                 One-on-one care with genuine love and attention. Your dog won't be just another number in a crowded facility.
               </p>
             </Card>
             
-            <Card className="p-6 hover:shadow-lg transition-shadow bg-background/50 backdrop-blur-sm border-amber-200/50 dark:border-amber-800/50">
-              <Shield className="w-12 h-12 text-green-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Peace of Mind</h3>
+            <Card className="p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-xl border-primary/20">
+              <Shield className="w-12 h-12 text-green-500 mb-4" />
+              <h3 className="text-xl font-semibold mb-3 text-foreground">Peace of Mind</h3>
               <p className="text-muted-foreground">
                 Fully insured, experienced care. Perfect for dogs that get anxious in loud, crowded environments.
               </p>
