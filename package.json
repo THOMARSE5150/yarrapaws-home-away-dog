@@ -3,12 +3,12 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "prebuild": "mkdir -p dist && cp -r public/* dist/ || true",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173",
-    "start": "serve -s dist -l $PORT"
+"scripts": {
+  "prebuild": "mkdir -p dist/public && cp -r public/images dist/public/ || true",
+  "dev": "vite",
+  "build": "npm run prebuild && vite build --outDir dist",
+  "preview": "vite preview",
+  "start": "serve dist -l 8080"  // 👈 Add this line
   },
   "engines": {
     "node": "20.x"
