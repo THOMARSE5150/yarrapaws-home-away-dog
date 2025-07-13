@@ -9,14 +9,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  server: {
-    port: 8080, // 👈 Required for Railway healthcheck
-  },
-  preview: {
-    port: 4173,
-  },
+  publicDir: 'public',
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
   },
-  base: './', // 👈 Important for correct relative routing
 });
