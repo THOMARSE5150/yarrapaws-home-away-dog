@@ -1,51 +1,25 @@
 const DogGallery = () => {
+  const images = [
+    "/lovable-uploads/14341486-8979-4d13-82c9-13e01df5e882.jpg",
+    "/lovable-uploads/7a1ef7e2-0b27-4d74-9406-5b52b6fd05c5.jpg",
+    "/lovable-uploads/9f105d07-4dcd-4e93-9b01-9a8f3d7b0658.webp",
+    "/lovable-uploads/7a1ef7e2-0b27-4d74-9406-5b52b6fd05c5.png",
+    "/lovable-uploads/701505c7-e2d0-4e25-9863-1bc6c4812a95.jpg",
+    "/lovable-uploads/8af6e7a5-67d0-4fbb-a0e3-b1c5e6c7a905.png",
+    "/lovable-uploads/ba15bafe-89f9-4a55-af1f-d8d2e0336b2e.webp",
+    "/lovable-uploads/ac0edc11-4f28-4404-a00f-898d37106598.png",
+  ];
+
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-      <picture>
-        <source srcSet="/lovable-uploads/1434fe8d-9879-4d13-82c9-1e30fa6efb82.webp" type="image/webp" />
-        <img src="/lovable-uploads/1434fe8d-9879-4d13-82c9-1e30fa6efb82.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/2a1e7bcb-cda7-4744-a7d2-8f0462655e55.webp" type="image/webp" />
-        <img src="/lovable-uploads/2a1e7bcb-cda7-4744-a7d2-8f0462655e55.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/2eb02de7-d37e-4fd4-a032-c404e42931f8.webp" type="image/webp" />
-        <img src="/lovable-uploads/2eb02de7-d37e-4fd4-a032-c404e42931f8.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/4ec8d538-80c7-4d13-ae84-2cb1b5e92c2d.webp" type="image/webp" />
-        <img src="/lovable-uploads/4ec8d538-80c7-4d13-ae84-2cb1b5e92c2d.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/5901ee9c-4e85-9c13-8035-36735b0c82b1.webp" type="image/webp" />
-        <img src="/lovable-uploads/5901ee9c-4e85-9c13-8035-36735b0c82b1.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/791503c7-e420-4b36-9ea3-b1c64a828745.webp" type="image/webp" />
-        <img src="/lovable-uploads/791503c7-e420-4b36-9ea3-b1c64a828745.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/85afbe75-4b79-4b50-a8fa-84a0913dea9c.webp" type="image/webp" />
-        <img src="/lovable-uploads/85afbe75-4b79-4b50-a8fa-84a0913dea9c.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/f94383a7-49ae-4c49-9a01-9af8371d0589.webp" type="image/webp" />
-        <img src="/lovable-uploads/f94383a7-49ae-4c49-9a01-9af8371d0589.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
-      <picture>
-        <source srcSet="/lovable-uploads/5901ee9c-4e85-9c13-8035-36735b0c82b1.webp" type="image/webp" />
-        <img src="/lovable-uploads/5901ee9c-4e85-9c13-8035-36735b0c82b1.jpg" alt="Dog at YarraPaws" className="rounded-xl w-full h-auto object-cover" />
-      </picture>
-
+      {images.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`Happy dog photo ${index + 1}`}
+          className="w-full h-auto object-cover rounded-lg"
+        />
+      ))}
     </section>
   );
 };
