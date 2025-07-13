@@ -114,46 +114,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Gallery</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Happy Dogs, Happy Owners</h2>
+    {/* Gallery Section */}
+<section id="gallery" className="py-16 px-4 bg-muted/30">
+  <div className="container mx-auto">
+    <div className="text-center mb-12">
+      <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Gallery</Badge>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Happy Dogs, Happy Owners</h2>
+    </div>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {[
+        "791503c7-e420-4b36-9ea3-b1c64a828745",
+        "5901ee9c-4e85-4e85-9c26-27d7182b80ae",
+        "2a1e7bcb-cda7-4744-a7d2-8f0462655e55",
+        "1434fe8d-9879-4d13-82c9-1e30fa6efb82",
+        "85afbe75-4b79-4b50-a8fa-84a0913dea9c",
+        "f94383a7-49ae-4c49-9a01-9af8371d0589",
+        "4ec8d538-80c7-4d13-ae10-e3228fb22b09",
+        "2eb02de7-d37e-4fd4-a032-c404e42931f8"
+      ].map((id, index) => {
+        const jpgUrl = `/uploads/${id}.jpg`;
+        const webpUrl = `/uploads/${id}.webp`;
+        return (
+          <div
+            key={index}
+            className="relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 bg-background"
+          >
+            <picture>
+              <source srcSet={webpUrl} type="image/webp" />
+              <img
+                src={jpgUrl}
+                alt={`Happy dog ${index + 1}`}
+                className="w-full h-full object-cover"
+                loading="eager"
+                onError={(e) => {
+                  // Fallback in case of load error
+                  e.currentTarget.src = jpgUrl;
+                }}
+              />
+            </picture>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-{[
-  "791503c7-e420-4b36-9ea3-b1c64a828745",
-  "5901ee9c-4e85-4e85-9c26-27d7182b80ae",
-  "2a1e7bcb-cda7-4744-a7d2-8f0462655e55",
-  "1434fe8d-9879-4d13-82c9-1e30fa6efb82",
-  "85afbe75-4b79-4b50-a8fa-84a0913dea9c",
-  "f94383a7-49ae-4c49-9a01-9af8371d0589",
-  "4ec8d538-80c7-4d13-ae10-e3228fb22b09",
-  "2eb02de7-d37e-4fd4-a032-c404e42931f8"
-].map((id, index) => (
-  <div
-    key={index}
-    className="aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 bg-background"
-  >
-    <picture>
-      <source srcSet={`/uploads/${id}.webp`} type="image/webp" />
-      <img
-        src={`/uploads/${id}.jpg`}
-        onError={(e) => {
-          e.currentTarget.onerror = null;
-          e.currentTarget.src = `/uploads/${id}.webp`;
-        }}
-        alt={`Happy dog ${index + 1}`}
-        className="w-full h-full object-cover"
-        loading="lazy"
-      />
-    </picture>
+        );
+      })}
+    </div>
   </div>
-))}
-          </div>
-        </div>
-      </section>
+</section>
     </div>
   );
 };
