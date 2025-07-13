@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
  "scripts": {
-  "prebuild": "mkdir -p dist/images && cp -r public/images/* dist/images || true",
+  "prebuild": "mkdir -p dist/uploads && cp -r public/uploads/* dist/uploads || true",
   "dev": "vite",
   "build": "npm run prebuild && vite build --outDir dist",
   "preview": "vite preview --port 4173",
