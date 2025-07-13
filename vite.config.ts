@@ -3,9 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/", // ✅ Ensures absolute paths like /lovable-uploads/... work in production
+  base: "./", // ✅ Use relative base path for production asset resolution
   server: {
     host: "::",
     port: 8080,
@@ -13,9 +12,6 @@ export default defineConfig(({ mode }) => ({
   preview: {
     host: "0.0.0.0",
     port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
-  },
-  build: {
-    outDir: "dist", // ✅ Required for Railway to serve correctly
   },
   plugins: [
     react(),
