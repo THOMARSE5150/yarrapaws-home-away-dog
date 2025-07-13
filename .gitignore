@@ -7,10 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Build output
 dist
 dist-ssr
 *.local
+
+# Dependencies
+node_modules
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# Uploaded content (keep public/uploads tracked)
+!public/uploads/
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +33,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+
+# Replit (optional)
+.replit
+.replit-db
