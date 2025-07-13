@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "start": "serve -s dist -l 3000"
+    "start": "serve -s dist -l $PORT"
   },
   "engines": {
     "node": "20.x"

@@ -4,22 +4,22 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", // ✅ Use relative base path for production asset resolution
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  preview: {
-    host: "0.0.0.0",
-    port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
-  },
- build: {
-  outDir: "dist", // ✅ Match Railway default or update railway.toml if you want "build"
-  },
+  base: "./", // ✅ Ensures assets resolve properly in production
   plugins: [
     react(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
+  build: {
+    outDir: "dist", // ✅ Railway expects /dist
+  },
+  server: {
+    host: "::",       // ✅ Accept all IPv6 hosts (safe fallback)
+    port: 8080,        // ✅ Required for Railway healthcheck to pass
+  },
+  preview: {
+    host: "0.0.0.0",   // ✅ Make preview visible from external URL if needed
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
