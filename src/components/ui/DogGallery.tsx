@@ -1,37 +1,38 @@
 const DogGallery = () => {
+  const base = import.meta.env.BASE_URL || "/";
   const images = [
     {
       id: "1434fe8d-9879-4d13-82c9-1e30fa6efb82",
-      alt: "Happy Shiba Inu in cosy home environment 1"
+      alt: "Happy Shiba Inu in cosy home environment 1",
     },
     {
       id: "2a1e7bcb-cda7-4744-a7d2-8f0462655e55",
-      alt: "Happy Shiba Inu in cosy home environment 2"
-    },
-    {
-      id: "194833f7-429c-4c99-9a87-5a617f315899",
-      alt: "Happy Shiba Inu in cosy home environment 3"
+      alt: "Happy Shiba Inu in cosy home environment 2",
     },
     {
       id: "2eb02de7-d37e-4fd4-a032-c404e42931f8",
-      alt: "Happy Shiba Inu in cosy home environment 4"
+      alt: "Happy Shiba Inu in cosy home environment 3",
     },
     {
-      id: "4ae9cf58-909a-4773-a274-8fbf29b0b9b0",
-      alt: "Happy Shiba Inu in cosy home environment 5"
+      id: "4ec8d538-80c7-4d13-ae10-e3228fb22b09",
+      alt: "Happy Shiba Inu in cosy home environment 4",
     },
     {
-      id: "5c9c92f6-9f2e-48a1-9183-3f5e2037dfde",
-      alt: "Happy Shiba Inu in cosy home environment 6"
+      id: "5901ee9c-4e85-4e85-9c26-27d7182b80ae",
+      alt: "Happy Shiba Inu in cosy home environment 5",
     },
     {
-      id: "8af6e7a5-67d0-4fbb-a0e3-b1c5e6c7a905",
-      alt: "Happy Shiba Inu in cosy home environment 7"
+      id: "791503c7-e420-4b36-9ea3-b1c64a828745",
+      alt: "Happy Shiba Inu in cosy home environment 6",
     },
     {
-      id: "ac0edc11-4f28-4404-a00f-898d37106598",
-      alt: "Happy Shiba Inu in cosy home environment 8"
-    }
+      id: "a2eaf670-ff3f-4db3-a8fa-84ebcfcaa6e3",
+      alt: "Happy Shiba Inu in cosy home environment 7",
+    },
+    {
+      id: "c20850e2-0ec5-41e1-bdb9-e60915e9fd04",
+      alt: "Happy Shiba Inu in cosy home environment 8",
+    },
   ];
 
   return (
@@ -42,14 +43,17 @@ const DogGallery = () => {
           className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer shadow-lg hover:shadow-xl"
         >
           <picture>
-            <source srcSet={`/lovable-uploads/${id}.webp`} type="image/webp" />
+            <source
+              srcSet={`${base}lovable-uploads/${id}.webp`}
+              type="image/webp"
+            />
             <img
-              src={`/lovable-uploads/${id}.jpg`}
+              src={`${base}lovable-uploads/${id}.jpg`}
               alt={alt}
               className="w-full h-full object-cover"
               loading="lazy"
               onError={(e) => {
-                e.currentTarget.src = `/lovable-uploads/${id}.png`;
+                e.currentTarget.src = `${base}lovable-uploads/${id}.png`;
               }}
             />
           </picture>
