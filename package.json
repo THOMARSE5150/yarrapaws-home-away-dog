@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port $PORT",
-    "start": "serve -s dist -l $PORT"
+    "start": "npx serve dist --single --listen $PORT"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
