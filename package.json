@@ -3,13 +3,13 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "prebuild": "mkdir -p dist/uploads && cp -r public/uploads/* dist/uploads || true",
-  "dev": "vite",
-  "build": "npm run prebuild && vite build --outDir dist",
-  "preview": "vite preview --port 4173",
-  "start": "serve -s dist -l 8080"
-},
+   "scripts": {
++   "prebuild": "mkdir -p dist/uploads && cp -r public/uploads/* dist/uploads || true",
+    "dev": "vite",
++   "build": "npm run prebuild && vite build --outDir dist",
+    "preview": "vite preview --port 4173",
+    "start": "serve -s dist -l 8080"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
