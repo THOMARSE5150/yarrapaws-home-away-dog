@@ -4,15 +4,12 @@
   "version": "0.0.0",
   "type": "module",
 "scripts": {
-  "prebuild": "mkdir -p dist/public && cp -r public/images dist/public/ || true",
+  "prebuild": "mkdir -p dist && cp -r public/* dist/ || true",
   "dev": "vite",
   "build": "npm run prebuild && vite build --outDir dist",
-  "preview": "vite preview",
-  "start": "serve dist -l 8080"  // 👈 Add this line
-  },
-  "engines": {
-    "node": "20.x"
-  },
+  "preview": "vite preview --port 4173",
+  "start": "serve -s dist -l 8080"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
