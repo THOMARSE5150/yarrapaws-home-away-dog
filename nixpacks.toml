@@ -1,2 +1,1 @@
-[providers]
-nodejs = "18"
+providers = ["nodejs"]
