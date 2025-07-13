@@ -1,10 +1,9 @@
 [build]
-builder = "NIXPACKS"
-buildCommand = "npm install && npm run build"
+command = "npm install && npm run build"
 
 [deploy]
-startCommand = "npx serve build --single --listen $PORT"
+startCommand = "npx serve dist --single --listen $PORT"
 healthcheckPath = "/"
 healthcheckTimeout = 100
-restartPolicyType = "on_failure"
+restartPolicyType = "on-failure"
 restartPolicyMaxRetries = 10
