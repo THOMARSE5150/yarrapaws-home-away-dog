@@ -18,6 +18,9 @@ const DogGallery = () => {
           src={src}
           alt={`Happy dog photo ${index + 1}`}
           className="w-full h-auto object-cover rounded-lg"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none'; // optional fallback
+          }}
         />
       ))}
     </section>
