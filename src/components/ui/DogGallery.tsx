@@ -1,31 +1,67 @@
-import React from "react";
-import { Card } from "@/components/ui/card";
+// src/components/ui/DogGallery.tsx
 
-const imageFilenames = [
-  "1434fe8d-9879-4d13-82c9-1e30fa6efb82.jpg",
-  "2a1e7bcb-cad7-47d4-a7f2-4046256e55c5.jpg",
-  "2eb02dd7-3ce7-4fd4-a032-404e429318f8.jpg",
-  "4ec8d538-8087-4d13-ae02-e3228fb2b009.jpg",
-  "5901ece9-4e85-4e85-96e3-1b7d128b80ae.jpg",
-  "791503c7-e420-43b6-9ea3-1bc648a28745.jpg",
+import React from "react";
+
+const imageList = [
+  {
+    src: "/uploads/shiba1.webp",
+    alt: "Happy Shiba Inu in cosy apartment setting",
+  },
+  {
+    src: "/uploads/shiba2.webp",
+    alt: "Relaxed dog lounging in sunlit yard",
+  },
+  {
+    src: "/uploads/shiba3.webp",
+    alt: "Small dog enjoying a nap indoors",
+  },
+  {
+    src: "/uploads/shiba4.webp",
+    alt: "Playful pup in courtyard",
+  },
+  {
+    src: "/uploads/shiba5.webp",
+    alt: "Dog looking curious in a secure outdoor space",
+  },
+  {
+    src: "/uploads/shiba6.webp",
+    alt: "Small dog enjoying cuddles",
+  },
+  {
+    src: "/uploads/shiba7.webp",
+    alt: "Pet lounging comfortably in home",
+  },
+  {
+    src: "/uploads/shiba8.webp",
+    alt: "Happy Shiba on a leash near yard",
+  },
 ];
 
-export default function DogGallery() {
+const DogGallery = () => {
   return (
-    <section className="py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Happy Guests</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4">
-        {imageFilenames.map((filename, index) => (
-          <Card key={index} className="overflow-hidden shadow-lg rounded-2xl">
-            <img
-              src={`/uploads/${filename}`}
-              alt={`Dog ${index + 1}`}
-              className="object-cover w-full h-48 md:h-64"
-              loading="lazy"
-            />
-          </Card>
-        ))}
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+          Happy Dogs, Happy Owners
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {imageList.map((image, index) => (
+            <div
+              key={index}
+              className="rounded-xl overflow-hidden shadow-lg bg-background/30 backdrop-blur-sm border border-border"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default DogGallery;
