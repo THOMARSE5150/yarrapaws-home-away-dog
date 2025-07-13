@@ -1,1 +1,2 @@
-providers = ["node@18"]
+[providers]
+nodejs = "18"
