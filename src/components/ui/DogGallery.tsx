@@ -1,63 +1,31 @@
-// src/components/ui/DogGallery.tsx
 import React from "react";
+import { Card } from "@/components/ui/card";
 
-const images = [
-  {
-    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 1",
-  },
-  {
-    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 2",
-  },
-  {
-    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 3",
-  },
-  {
-    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 4",
-  },
-  {
-    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 5",
-  },
-  {
-    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 6",
-  },
+const imageFilenames = [
+  "1434fe8d-9879-4d13-82c9-1e30fa6efb82.jpg",
+  "2a1e7bcb-cad7-47d4-a7f2-4046256e55c5.jpg",
+  "2eb02dd7-3ce7-4fd4-a032-404e429318f8.jpg",
+  "4ec8d538-8087-4d13-ae02-e3228fb2b009.jpg",
+  "5901ece9-4e85-4e85-96e3-1b7d128b80ae.jpg",
+  "791503c7-e420-43b6-9ea3-1bc648a28745.jpg",
 ];
 
-const DogGallery = () => {
+export default function DogGallery() {
   return (
-    <section className="px-6 py-8 relative overflow-hidden min-h-screen flex items-center">
-      <div className="w-full max-w-6xl mx-auto">
-        <div className="text-center mb-8">
-          <span className="inline-block text-xs uppercase tracking-widest font-medium text-yellow-400 mb-2">
-            Gallery
-          </span>
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Happy Dogs, Happy Owners
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer shadow-lg"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
+    <section className="py-12">
+      <h2 className="text-3xl font-bold text-center mb-8">Our Happy Guests</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4">
+        {imageFilenames.map((filename, index) => (
+          <Card key={index} className="overflow-hidden shadow-lg rounded-2xl">
+            <img
+              src={`/uploads/${filename}`}
+              alt={`Dog ${index + 1}`}
+              className="object-cover w-full h-48 md:h-64"
+              loading="lazy"
+            />
+          </Card>
+        ))}
       </div>
     </section>
   );
-};
-
-export default DogGallery;
+}
