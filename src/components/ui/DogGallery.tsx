@@ -1,41 +1,57 @@
-import React from 'react';
+// src/components/ui/DogGallery.tsx
+import React from "react";
 
-const dogImages = [
+const images = [
   {
-    webp: "/uploads/2a1e7bcb-cda7-4744-a7d2-8f0462655e55.webp",
-    jpg: "/uploads/2a1e7bcb-cda7-4744-a7d2-8f0462655e55.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 3",
+    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
+    alt: "Happy Shiba Inu in cosy home environment 1",
   },
   {
-    webp: "/uploads/5901ee9c-4e85-4e85-9c26-27d7182b80ae.webp",
-    jpg: "/uploads/5901ee9c-4e85-4e85-9c26-27d7182b80ae.jpg",
+    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
     alt: "Happy Shiba Inu in cosy home environment 2",
   },
   {
-    webp: "/uploads/791503c7-e420-4b36-9ea3-b1c64a828745.webp",
-    jpg: "/uploads/791503c7-e420-4b36-9ea3-b1c64a828745.jpg",
-    alt: "Happy Shiba Inu in cosy home environment 1",
+    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
+    alt: "Happy Shiba Inu in cosy home environment 3",
   },
-  // Add more entries as needed...
+  {
+    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
+    alt: "Happy Shiba Inu in cosy home environment 4",
+  },
+  {
+    src: "/uploads/2a17ebbc-cb47-474a-9702-8f4f866255e5.jpg",
+    alt: "Happy Shiba Inu in cosy home environment 5",
+  },
+  {
+    src: "/uploads/5991edfc-e545-4db5-9c76-7074712b80ea.jpg",
+    alt: "Happy Shiba Inu in cosy home environment 6",
+  },
 ];
 
 const DogGallery = () => {
   return (
-    <section className="px-6 py-12 relative before:opacity-40 before:absolute before:inset-0 before:bg-gradient-to-br from-background/50 to-muted/40">
-      <div className="container">
-        <div className="text-center mb-12">
-          <span className="text-sm font-semibold tracking-wider uppercase text-muted-foreground bg-muted/30 rounded-full px-3 py-1">
+    <section className="px-6 py-8 relative overflow-hidden min-h-screen flex items-center">
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <span className="inline-block text-xs uppercase tracking-widest font-medium text-yellow-400 mb-2">
             Gallery
           </span>
-          <h2 className="mt-4 text-3xl font-bold text-white">Happy Dogs, Happy Owners</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Happy Dogs, Happy Owners
+          </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {dogImages.map((img, index) => (
-            <div key={index} className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer shadow-lg hover:shadow-xl">
-              <picture>
-                <source srcSet={img.webp} type="image/webp" />
-                <img src={img.jpg} alt={img.alt} className="w-full h-full object-cover" />
-              </picture>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer shadow-lg"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
